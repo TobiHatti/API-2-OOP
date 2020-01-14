@@ -1,0 +1,12 @@
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\bin\Debug\Rest2CS.exe.config
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\bin\Debug\Rest2CS.exe
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\bin\Debug\Rest2CS.pdb
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\obj\Debug\Rest2CS.csprojAssemblyReference.cache
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\obj\Debug\Rest2CS.Form1.resources
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\obj\Debug\Rest2CS.Properties.Resources.resources
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\obj\Debug\Rest2CS.csproj.GenerateResource.cache
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\obj\Debug\Rest2CS.exe
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\obj\Debug\Rest2CS.pdb
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zivi\Desktop\Projects (GIT)\Rest2CS\Rest2CS\obj\Debug\Rest2CS.csproj.CopyComplete
