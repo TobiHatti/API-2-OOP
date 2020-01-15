@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -73,7 +74,7 @@ namespace API2OOP_UWP
         }
 
 
-        private void LoadApi()
+        private async void LoadApi()
         {
             Uri uriResult;
             bool isValidUrl = Uri.TryCreate(txbApiUrl.Text, UriKind.Absolute, out uriResult)
@@ -108,7 +109,8 @@ namespace API2OOP_UWP
             }
             else
             {
-                //MessageBox.Show("Please enter a valid URL", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageDialog dialog = new MessageDialog("Please enter a valid URL, eg.: https://www.example.com/api/", "No valid URL");
+                await dialog.ShowAsync();
             }
         }
 
@@ -123,12 +125,6 @@ namespace API2OOP_UWP
             lbxApiResult.DisplayMemberPath = "";
             lbxApiResult.SelectedValuePath = "";
             lbxApiResult.Items.Clear();
-
-
-            //ApiData = new DataTable("ApiData");
-
-            //ApiData.Columns.Add("Display", typeof(string));
-            //ApiData.Columns.Add("CSFormat", typeof(string));
 
             ApiData = new List<ApiDataV2>();
 
@@ -176,8 +172,6 @@ namespace API2OOP_UWP
                 }
 
                 ApiData.Add(new ApiDataV2(line, ParseCurrentLine(line, apiElements)));
-
-                //ApiData.Rows.Add(line, ParseCurrentLine(line, apiElements));
             }
 
             lbxApiResult.ItemsSource = ApiData;

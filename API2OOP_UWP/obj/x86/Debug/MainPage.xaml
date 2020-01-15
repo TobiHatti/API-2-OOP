@@ -9,8 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="680" d:DesignHeight="509" MinHeight="425">
 
     <Grid>
-        <Rectangle HorizontalAlignment="Left"  Width="120" Fill="#FF1F1F1F"/>
-        <Rectangle Fill="#FF1F1F1F" Height="82" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="Api Url:" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox x:ConnectionId='2' x:Name="txbApiUrl" Margin="10,34,69,0" Text="" PlaceholderText="https://..." TextWrapping="Wrap" VerticalAlignment="Top"                            />
         <Button x:ConnectionId='3' x:Name="btnLoadApi" Content="Go" Margin="0,34,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="54"                         />
