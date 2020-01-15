@@ -50,6 +50,51 @@ namespace API2OOP
             if (e.KeyData == Keys.Enter) LoadApi();
         }
 
+        
+
+        private void lbxApiResult_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(lbxApiResult.SelectedValue != null)
+                txbCSObject.Text = lbxApiResult.SelectedValue.ToString();
+        }
+
+        private void cbxLanguage_SelectedValueChanged(object sender, EventArgs e)
+        {
+            switch(cbxLanguage.SelectedIndex)
+            {
+                case 0:
+                    arrayOpenBracket = '[';
+                    arrayCloseBracket = ']';
+                    classDelimiter = ".";
+                    break;
+                case 1:
+                    arrayOpenBracket = '(';
+                    arrayCloseBracket = ')';
+                    classDelimiter = ".";
+                    break;
+                case 2:
+                    arrayOpenBracket = '[';
+                    arrayCloseBracket = ']';
+                    classDelimiter = "->";
+                    break;
+            }
+
+            if(ApiResponse != null)
+                FillApiListing();
+        }
+
+        private void chbShowLangType_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ApiResponse != null)
+                FillApiListing();
+        }
+
+        private void btnCopyResult2Clipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txbCSObject.Text);
+        }
+
+
         private void LoadApi()
         {
             Uri uriResult;
@@ -85,7 +130,7 @@ namespace API2OOP
             }
             else
             {
-                MessageBox.Show("Please enter a valid URL","Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please enter a valid URL", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -100,7 +145,7 @@ namespace API2OOP
             lbxApiResult.DisplayMember = null;
             lbxApiResult.ValueMember = null;
             lbxApiResult.Items.Clear();
-           
+
 
             DataTable apiData = new DataTable("ApiData");
 
@@ -166,19 +211,19 @@ namespace API2OOP
         {
             string outText = "";
 
-            foreach(ApiElement element in pApiElementList)
+            foreach (ApiElement element in pApiElementList)
             {
-                if(element.IsArray) outText += element.GroupName + arrayOpenBracket + element.ArrayIndex + arrayCloseBracket + classDelimiter;
+                if (element.IsArray) outText += element.GroupName + arrayOpenBracket + element.ArrayIndex + arrayCloseBracket + classDelimiter;
                 else outText += element.GroupName + classDelimiter;
 
-                
+
             }
 
             // Match elements "...":"..."
             if (Regex.IsMatch(pLine, regexMatchGroupElement))
             {
                 // Get name of the element
-                outText += Regex.Match(pLine, regexFindElementName).Value.TrimStart('"').TrimEnd(':','"');
+                outText += Regex.Match(pLine, regexFindElementName).Value.TrimStart('"').TrimEnd(':', '"');
             }
             // Match Group Start "...": { or Match Array Start "...": [
             else if (Regex.IsMatch(pLine, regexMatchGroupStart) || Regex.IsMatch(pLine, regexMatchArrayStart))
@@ -187,7 +232,7 @@ namespace API2OOP
                 outText = outText.Substring(0, outText.Length - 1);
             }
             // Match ArrayGroup-Start { or Match Group-End } or Match Array-End ]
-            else if (Regex.IsMatch(pLine, regexArrayGroupStart) ||Regex.IsMatch(pLine, regexMatchGroupEnd) || Regex.IsMatch(pLine, regexMatchArrayEnd))
+            else if (Regex.IsMatch(pLine, regexArrayGroupStart) || Regex.IsMatch(pLine, regexMatchGroupEnd) || Regex.IsMatch(pLine, regexMatchArrayEnd))
             {
                 // Invalid Line
                 outText = "";
@@ -208,48 +253,6 @@ namespace API2OOP
                 IsArray = pIsArray;
                 ArrayIndex = pArrayIndex;
             }
-        }
-
-        private void lbxApiResult_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if(lbxApiResult.SelectedValue != null)
-                txbCSObject.Text = lbxApiResult.SelectedValue.ToString();
-        }
-
-        private void cbxLanguage_SelectedValueChanged(object sender, EventArgs e)
-        {
-            switch(cbxLanguage.SelectedIndex)
-            {
-                case 0:
-                    arrayOpenBracket = '[';
-                    arrayCloseBracket = ']';
-                    classDelimiter = ".";
-                    break;
-                case 1:
-                    arrayOpenBracket = '(';
-                    arrayCloseBracket = ')';
-                    classDelimiter = ".";
-                    break;
-                case 2:
-                    arrayOpenBracket = '[';
-                    arrayCloseBracket = ']';
-                    classDelimiter = "->";
-                    break;
-            }
-
-            if(ApiResponse != null)
-                FillApiListing();
-        }
-
-        private void chbShowLangType_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ApiResponse != null)
-                FillApiListing();
-        }
-
-        private void btnCopyResult2Clipboard_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetText(txbCSObject.Text);
         }
     }
 }
