@@ -52,7 +52,6 @@ namespace API2OOP
 
         private void LoadApi()
         {
-
             Uri uriResult;
             bool isValidUrl = Uri.TryCreate(txbApiUrl.Text, UriKind.Absolute, out uriResult)
                 && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);

@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCopyResult2Clipboard = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.cbxLanguage = new System.Windows.Forms.ComboBox();
             this.lbxApiResult = new System.Windows.Forms.ListBox();
             this.txbCSObject = new System.Windows.Forms.TextBox();
@@ -83,7 +82,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnCopyResult2Clipboard);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cbxLanguage);
             this.groupBox1.Controls.Add(this.lbxApiResult);
             this.groupBox1.Controls.Add(this.txbCSObject);
@@ -106,16 +104,6 @@
             this.btnCopyResult2Clipboard.Text = "Copy";
             this.btnCopyResult2Clipboard.UseVisualStyleBackColor = true;
             this.btnCopyResult2Clipboard.Click += new System.EventHandler(this.btnCopyResult2Clipboard_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(467, 566);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Get Sample-Code";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // cbxLanguage
             // 
@@ -349,7 +337,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbxLanguage;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCopyResult2Clipboard;
     }
 }
