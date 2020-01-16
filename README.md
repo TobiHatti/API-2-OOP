@@ -1,5 +1,8 @@
 # API-2-OOP
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+
+
 ![image](https://github.com/TobiHatti/API-2-OOP/blob/master/API2OOP_Sample.PNG)
 
 The API-2-OOP-Tool provides a simple way to convert lines from an API to programing-friendly-formated statements to speed up development of API-based programs.
