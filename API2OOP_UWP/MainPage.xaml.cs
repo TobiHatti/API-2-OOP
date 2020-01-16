@@ -13,6 +13,7 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -43,7 +44,6 @@ namespace API2OOP_UWP
         private string regexFindGroupName = @"""[A-Za-z0-9:/._-]+""";
         private string regexFindElementName = @"""[A-Za-z0-9:/._-]+"":";
 
-        private string languageDynamicType = "dynamic";
         private string classDelimiter = ".";
         private char arrayOpenBracket = '[';
         private char arrayCloseBracket = ']';
@@ -66,6 +66,9 @@ namespace API2OOP_UWP
         public MainPage()
         {
             this.InitializeComponent();
+
+            ApplicationView appView = ApplicationView.GetForCurrentView();
+            appView.Title = "API-2-OOP Parser";
         }
 
         private void btnLoadApi_Click(object sender, RoutedEventArgs e)
@@ -76,108 +79,123 @@ namespace API2OOP_UWP
 
         private async void LoadApi()
         {
-            Uri uriResult;
-            bool isValidUrl = Uri.TryCreate(txbApiUrl.Text, UriKind.Absolute, out uriResult)
-                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
-
-            if (isValidUrl)
+            try
             {
-                if (string.IsNullOrEmpty(txbPost1Key.Text) && string.IsNullOrEmpty(txbPost2Key.Text) && string.IsNullOrEmpty(txbPost3Key.Text))
+                Uri uriResult;
+                bool isValidUrl = Uri.TryCreate(txbApiUrl.Text, UriKind.Absolute, out uriResult)
+                    && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+
+                if (isValidUrl)
                 {
-                    using (WebClient webClient = new WebClient())
+                    if (string.IsNullOrEmpty(txbPost1Key.Text) && string.IsNullOrEmpty(txbPost2Key.Text) && string.IsNullOrEmpty(txbPost3Key.Text))
                     {
-                        ApiResponse = webClient.DownloadString(txbApiUrl.Text);
+                        using (WebClient webClient = new WebClient())
+                        {
+                            ApiResponse = webClient.DownloadString(txbApiUrl.Text);
+                        }
                     }
+                    else
+                    {
+                        using (WebClient webClient = new WebClient())
+                        {
+                            NameValueCollection postAttributes = new NameValueCollection();
+
+                            if (!string.IsNullOrEmpty(txbPost1Key.Text)) postAttributes.Add(txbPost1Key.Text, txbPost1Value.Text);
+                            if (!string.IsNullOrEmpty(txbPost2Key.Text)) postAttributes.Add(txbPost2Key.Text, txbPost2Value.Text);
+                            if (!string.IsNullOrEmpty(txbPost3Key.Text)) postAttributes.Add(txbPost3Key.Text, txbPost3Value.Text);
+
+                            ApiResponse = Encoding.UTF8.GetString(webClient.UploadValues(txbApiUrl.Text, postAttributes));
+                        }
+                    }
+
+                    ApiResult = JsonConvert.DeserializeObject(ApiResponse);
+
+                    FillApiListing();
                 }
                 else
                 {
-                    using (WebClient webClient = new WebClient())
-                    {
-                        NameValueCollection postAttributes = new NameValueCollection();
-
-                        if (!string.IsNullOrEmpty(txbPost1Key.Text)) postAttributes.Add(txbPost1Key.Text, txbPost1Value.Text);
-                        if (!string.IsNullOrEmpty(txbPost2Key.Text)) postAttributes.Add(txbPost2Key.Text, txbPost2Value.Text);
-                        if (!string.IsNullOrEmpty(txbPost3Key.Text)) postAttributes.Add(txbPost3Key.Text, txbPost3Value.Text);
-
-                        ApiResponse = Encoding.UTF8.GetString(webClient.UploadValues(txbApiUrl.Text, postAttributes));
-                    }
+                    MessageDialog dialog = new MessageDialog("Please enter a valid URL, eg.: https://www.example.com/api/", "No valid URL");
+                    await dialog.ShowAsync();
                 }
-
-                ApiResult = JsonConvert.DeserializeObject(ApiResponse);
-
-                FillApiListing();
             }
-            else
+            catch (Exception ex)
             {
-                MessageDialog dialog = new MessageDialog("Please enter a valid URL, eg.: https://www.example.com/api/", "No valid URL");
+                MessageDialog dialog = new MessageDialog("The API could not be loaded or failed to parse. Please verify that the APIs URL is valid and the output is in a standard JSON format.", "Could not load API");
                 await dialog.ShowAsync();
             }
         }
 
-        private void FillApiListing()
+        private async void FillApiListing()
         {
-            string apiString = ApiResult.ToString();
-            string[] apiLines = Regex.Split(apiString, "\r\n|\r|\n");
+            try
+            { 
+                string apiString = ApiResult.ToString();
+                string[] apiLines = Regex.Split(apiString, "\r\n|\r|\n");
 
-            List<ApiElement> apiElements = new List<ApiElement>();
+                List<ApiElement> apiElements = new List<ApiElement>();
 
-            lbxApiResult.ItemsSource = null;
-            lbxApiResult.DisplayMemberPath = "";
-            lbxApiResult.SelectedValuePath = "";
-            lbxApiResult.Items.Clear();
+                lbxApiResult.ItemsSource = null;
+                lbxApiResult.DisplayMemberPath = "";
+                lbxApiResult.SelectedValuePath = "";
+                lbxApiResult.Items.Clear();
 
-            ApiData = new List<ApiDataV2>();
+                ApiData = new List<ApiDataV2>();
 
-            bool firstLine = true;
-            foreach (string line in apiLines)
-            {
-                if (firstLine)
+                bool firstLine = true;
+                foreach (string line in apiLines)
                 {
-                    if (line.StartsWith("{")) apiElements.Add(new ApiElement("api"));
-                    if (line.StartsWith("[")) apiElements.Add(new ApiElement("api", true));
-                }
-                firstLine = false;
+                    if (firstLine)
+                    {
+                        if (line.StartsWith("{")) apiElements.Add(new ApiElement("api"));
+                        if (line.StartsWith("[")) apiElements.Add(new ApiElement("api", true));
+                    }
+                    firstLine = false;
 
-                string tmp;
+                    string tmp;
 
-                // Match Group Start "...": {
-                if (Regex.IsMatch(line, regexMatchGroupStart))
-                {
-                    tmp = Regex.Match(line, regexFindGroupName).Value.TrimStart('"').TrimEnd('"');
+                    // Match Group Start "...": {
+                    if (Regex.IsMatch(line, regexMatchGroupStart))
+                    {
+                        tmp = Regex.Match(line, regexFindGroupName).Value.TrimStart('"').TrimEnd('"');
 
-                    apiElements.Add(new ApiElement(tmp));
-                }
-                // Match Array Start "...": [
-                else if (Regex.IsMatch(line, regexMatchArrayStart))
-                {
-                    tmp = Regex.Match(line, regexFindGroupName).Value.TrimStart('"').TrimEnd('"');
+                        apiElements.Add(new ApiElement(tmp));
+                    }
+                    // Match Array Start "...": [
+                    else if (Regex.IsMatch(line, regexMatchArrayStart))
+                    {
+                        tmp = Regex.Match(line, regexFindGroupName).Value.TrimStart('"').TrimEnd('"');
 
-                    apiElements.Add(new ApiElement(tmp, true, 0));
-                }
-                // Match ArrayGroup-Start {
-                else if (Regex.IsMatch(line, regexArrayGroupStart))
-                {
-                    // No special action needed
-                }
-                // Match Group-End }
-                else if (Regex.IsMatch(line, regexMatchGroupEnd))
-                {
-                    if (!apiElements[apiElements.Count - 1].IsArray) apiElements.RemoveAt(apiElements.Count - 1);
-                    else apiElements[apiElements.Count - 1].ArrayIndex++;
-                }
-                // Match Array-End ]
-                else if (Regex.IsMatch(line, regexMatchArrayEnd))
-                {
-                    apiElements.RemoveAt(apiElements.Count - 1);
+                        apiElements.Add(new ApiElement(tmp, true, 0));
+                    }
+                    // Match ArrayGroup-Start {
+                    else if (Regex.IsMatch(line, regexArrayGroupStart))
+                    {
+                        // No special action needed
+                    }
+                    // Match Group-End }
+                    else if (Regex.IsMatch(line, regexMatchGroupEnd))
+                    {
+                        if (!apiElements[apiElements.Count - 1].IsArray) apiElements.RemoveAt(apiElements.Count - 1);
+                        else apiElements[apiElements.Count - 1].ArrayIndex++;
+                    }
+                    // Match Array-End ]
+                    else if (Regex.IsMatch(line, regexMatchArrayEnd))
+                    {
+                        apiElements.RemoveAt(apiElements.Count - 1);
+                    }
+
+                    ApiData.Add(new ApiDataV2(line, ParseCurrentLine(line, apiElements)));
                 }
 
-                ApiData.Add(new ApiDataV2(line, ParseCurrentLine(line, apiElements)));
+                lbxApiResult.ItemsSource = ApiData;
+                lbxApiResult.DisplayMemberPath = "ActualLine";
+                lbxApiResult.SelectedValuePath = "SimplifiedLine";
             }
-
-            lbxApiResult.ItemsSource = ApiData;
-            lbxApiResult.DisplayMemberPath = "ActualLine";
-            lbxApiResult.SelectedValuePath = "SimplifiedLine";
-
+            catch (Exception ex)
+            {
+                MessageDialog dialog = new MessageDialog("An error occured while trying to parse the API. Please check the API-Source and try again", "Parsing Error");
+                await dialog.ShowAsync();
+            }
         }
 
         private string ParseCurrentLine(string pLine, List<ApiElement> pApiElementList)

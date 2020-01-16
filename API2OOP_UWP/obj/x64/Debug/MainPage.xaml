@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="API2OOP_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:API2OOP_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="680" d:DesignHeight="509" MinHeight="425">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="Api Url:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='2' x:Name="txbApiUrl" Margin="10,34,69,0" Text="" PlaceholderText="https://..." TextWrapping="Wrap" VerticalAlignment="Top"                            />
+        <Button x:ConnectionId='3' x:Name="btnLoadApi" Content="Go" Margin="0,34,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="54"                         />
+        <ListView x:ConnectionId='4' x:Name="lbxApiResult" Margin="125,111,10,47" RequestedTheme="Default" BorderBrush="#FF666666" BorderThickness="2,2,2,2" FocusVisualPrimaryBrush="#FFFFCF4E"                                                 >
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="10,87,0,0" Text="Post Value 1" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='5' x:Name="txbPost1Key" HorizontalAlignment="Left" Margin="10,111,0,0" Text="" PlaceholderText="Key" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:ConnectionId='6' x:Name="txbPost1Value" HorizontalAlignment="Left" Margin="10,148,0,0" Text="" PlaceholderText="Value" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,185,0,0" Text="Post Value 2" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='7' x:Name="txbPost2Key" HorizontalAlignment="Left" Margin="10,209,0,0" Text="" PlaceholderText="Key" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:ConnectionId='8' x:Name="txbPost2Value" HorizontalAlignment="Left" Margin="10,246,0,0" Text="" PlaceholderText="Value" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,283,0,0" Text="Post Value 3" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='9' x:Name="txbPost3Key" HorizontalAlignment="Left" Margin="10,306,0,0" Text="" PlaceholderText="Key" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:ConnectionId='10' x:Name="txbPost3Value" HorizontalAlignment="Left" Margin="10,343,0,0" Text="" PlaceholderText="Value" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="125,87,0,0" Text="Result View" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:ConnectionId='11' x:Name="btnCopyResult2Clipboard" Content="Copy" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="54" Height="32" HorizontalAlignment="Right"                                      />
+        <TextBox x:ConnectionId='12' x:Name="txbCSObject" Margin="125,0,69,10" Text="" PlaceholderText="No Item Selected / No Output Possible" TextWrapping="Wrap" Height="32" VerticalAlignment="Bottom" IsReadOnly="True"/>
+        <ComboBox x:ConnectionId='13' x:Name="cbxLanguage" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="100"                                                >
+            <ComboBoxItem IsSelected="True" Content="C#, Java, Pyhtom, etc."/>
+            <ComboBoxItem Content="VB.NET"/>
+            <ComboBoxItem Content="PHP"/>
+        </ComboBox>
+    </Grid>
+</Page>
+

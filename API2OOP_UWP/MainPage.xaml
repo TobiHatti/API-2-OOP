@@ -25,12 +25,11 @@
         <TextBox x:Name="txbPost3Value" HorizontalAlignment="Left" Margin="10,343,0,0" Text="" PlaceholderText="Value" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="125,87,0,0" Text="Result View" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button x:Name="btnCopyResult2Clipboard" Content="Copy" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="54" Height="32" HorizontalAlignment="Right" Click="btnCopyResult2Clipboard_Click"/>
-        <TextBox x:Name="txbCSObject" Margin="125,0,69,10" Text="" PlaceholderText="No Item Selected / No Output Possible" TextWrapping="Wrap" Height="32" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="txbCSObject" Margin="125,0,69,10" Text="" PlaceholderText="No Item Selected / No Output Possible" TextWrapping="Wrap" Height="32" VerticalAlignment="Bottom" IsReadOnly="True"/>
         <ComboBox x:Name="cbxLanguage" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="100" SelectionChanged="cbxLanguage_SelectionChanged">
             <ComboBoxItem IsSelected="True" Content="C#, Java, Pyhtom, etc."/>
             <ComboBoxItem Content="VB.NET"/>
             <ComboBoxItem Content="PHP"/>
         </ComboBox>
-
     </Grid>
 </Page>

@@ -97,112 +97,125 @@ namespace API2OOP
 
         private void LoadApi()
         {
-            Uri uriResult;
-            bool isValidUrl = Uri.TryCreate(txbApiUrl.Text, UriKind.Absolute, out uriResult)
-                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+            try
+            { 
+                Uri uriResult;
+                bool isValidUrl = Uri.TryCreate(txbApiUrl.Text, UriKind.Absolute, out uriResult)
+                    && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 
-            if (isValidUrl)
-            {
-                if (string.IsNullOrEmpty(txbPost1Key.Text) && string.IsNullOrEmpty(txbPost2Key.Text) && string.IsNullOrEmpty(txbPost3Key.Text))
+                if (isValidUrl)
                 {
-                    using (WebClient webClient = new WebClient())
+                    if (string.IsNullOrEmpty(txbPost1Key.Text) && string.IsNullOrEmpty(txbPost2Key.Text) && string.IsNullOrEmpty(txbPost3Key.Text))
                     {
-                        ApiResponse = webClient.DownloadString(txbApiUrl.Text);
+                        using (WebClient webClient = new WebClient())
+                        {
+                            ApiResponse = webClient.DownloadString(txbApiUrl.Text);
+                        }
                     }
+                    else
+                    {
+                        using (WebClient webClient = new WebClient())
+                        {
+                            NameValueCollection postAttributes = new NameValueCollection();
+
+                            if (!string.IsNullOrEmpty(txbPost1Key.Text)) postAttributes.Add(txbPost1Key.Text, txbPost1Value.Text);
+                            if (!string.IsNullOrEmpty(txbPost2Key.Text)) postAttributes.Add(txbPost2Key.Text, txbPost2Value.Text);
+                            if (!string.IsNullOrEmpty(txbPost3Key.Text)) postAttributes.Add(txbPost3Key.Text, txbPost3Value.Text);
+
+                            ApiResponse = Encoding.UTF8.GetString(webClient.UploadValues(txbApiUrl.Text, postAttributes));
+                        }
+                    }
+
+                    ApiResult = JsonConvert.DeserializeObject(ApiResponse);
+
+                    FillApiListing();
                 }
                 else
                 {
-                    using (WebClient webClient = new WebClient())
-                    {
-                        NameValueCollection postAttributes = new NameValueCollection();
-
-                        if (!string.IsNullOrEmpty(txbPost1Key.Text)) postAttributes.Add(txbPost1Key.Text, txbPost1Value.Text);
-                        if (!string.IsNullOrEmpty(txbPost2Key.Text)) postAttributes.Add(txbPost2Key.Text, txbPost2Value.Text);
-                        if (!string.IsNullOrEmpty(txbPost3Key.Text)) postAttributes.Add(txbPost3Key.Text, txbPost3Value.Text);
-
-                        ApiResponse = Encoding.UTF8.GetString(webClient.UploadValues(txbApiUrl.Text, postAttributes));
-                    }
+                    MessageBox.Show("Please enter a valid URL", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
-                ApiResult = JsonConvert.DeserializeObject(ApiResponse);
-
-                FillApiListing();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Please enter a valid URL", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("The API could not be loaded or failed to parse.Please verify that the APIs URL is valid and the output is in a standard JSON format.", "Could not load API", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         private void FillApiListing()
         {
-            string apiString = ApiResult.ToString();
-            string[] apiLines = Regex.Split(apiString, "\r\n|\r|\n");
-
-            List<ApiElement> apiElements = new List<ApiElement>();
-
-            lbxApiResult.DataSource = null;
-            lbxApiResult.DisplayMember = null;
-            lbxApiResult.ValueMember = null;
-            lbxApiResult.Items.Clear();
-
-
-            DataTable apiData = new DataTable("ApiData");
-
-            apiData.Columns.Add("Display", typeof(string));
-            apiData.Columns.Add("CSFormat", typeof(string));
-
-
-            bool firstLine = true;
-            foreach (string line in apiLines)
+            try
             {
-                if (firstLine)
-                {
-                    if (line.StartsWith("{")) apiElements.Add(new ApiElement("api"));
-                    if (line.StartsWith("[")) apiElements.Add(new ApiElement("api", true));
-                }
-                firstLine = false;
+                string apiString = ApiResult.ToString();
+                string[] apiLines = Regex.Split(apiString, "\r\n|\r|\n");
 
-                string tmp;
+                List<ApiElement> apiElements = new List<ApiElement>();
 
-                // Match Group Start "...": {
-                if (Regex.IsMatch(line, regexMatchGroupStart))
-                {
-                    tmp = Regex.Match(line, regexFindGroupName).Value.TrimStart('"').TrimEnd('"');
+                lbxApiResult.DataSource = null;
+                lbxApiResult.DisplayMember = null;
+                lbxApiResult.ValueMember = null;
+                lbxApiResult.Items.Clear();
 
-                    apiElements.Add(new ApiElement(tmp));
-                }
-                // Match Array Start "...": [
-                else if (Regex.IsMatch(line, regexMatchArrayStart))
-                {
-                    tmp = Regex.Match(line, regexFindGroupName).Value.TrimStart('"').TrimEnd('"');
 
-                    apiElements.Add(new ApiElement(tmp, true, 0));
-                }
-                // Match ArrayGroup-Start {
-                else if (Regex.IsMatch(line, regexArrayGroupStart))
+                DataTable apiData = new DataTable("ApiData");
+
+                apiData.Columns.Add("Display", typeof(string));
+                apiData.Columns.Add("CSFormat", typeof(string));
+
+
+                bool firstLine = true;
+                foreach (string line in apiLines)
                 {
-                    // No special action needed
-                }
-                // Match Group-End }
-                else if (Regex.IsMatch(line, regexMatchGroupEnd))
-                {
-                    if (!apiElements[apiElements.Count - 1].IsArray) apiElements.RemoveAt(apiElements.Count - 1);
-                    else apiElements[apiElements.Count - 1].ArrayIndex++;
-                }
-                // Match Array-End ]
-                else if (Regex.IsMatch(line, regexMatchArrayEnd))
-                {
-                    apiElements.RemoveAt(apiElements.Count - 1);
+                    if (firstLine)
+                    {
+                        if (line.StartsWith("{")) apiElements.Add(new ApiElement("api"));
+                        if (line.StartsWith("[")) apiElements.Add(new ApiElement("api", true));
+                    }
+                    firstLine = false;
+
+                    string tmp;
+
+                    // Match Group Start "...": {
+                    if (Regex.IsMatch(line, regexMatchGroupStart))
+                    {
+                        tmp = Regex.Match(line, regexFindGroupName).Value.TrimStart('"').TrimEnd('"');
+
+                        apiElements.Add(new ApiElement(tmp));
+                    }
+                    // Match Array Start "...": [
+                    else if (Regex.IsMatch(line, regexMatchArrayStart))
+                    {
+                        tmp = Regex.Match(line, regexFindGroupName).Value.TrimStart('"').TrimEnd('"');
+
+                        apiElements.Add(new ApiElement(tmp, true, 0));
+                    }
+                    // Match ArrayGroup-Start {
+                    else if (Regex.IsMatch(line, regexArrayGroupStart))
+                    {
+                        // No special action needed
+                    }
+                    // Match Group-End }
+                    else if (Regex.IsMatch(line, regexMatchGroupEnd))
+                    {
+                        if (!apiElements[apiElements.Count - 1].IsArray) apiElements.RemoveAt(apiElements.Count - 1);
+                        else apiElements[apiElements.Count - 1].ArrayIndex++;
+                    }
+                    // Match Array-End ]
+                    else if (Regex.IsMatch(line, regexMatchArrayEnd))
+                    {
+                        apiElements.RemoveAt(apiElements.Count - 1);
+                    }
+
+                    apiData.Rows.Add(line, ParseCurrentLine(line, apiElements));
                 }
 
-                apiData.Rows.Add(line, ParseCurrentLine(line, apiElements));
+                lbxApiResult.DataSource = apiData;
+                lbxApiResult.DisplayMember = apiData.Columns[0].ColumnName;
+                lbxApiResult.ValueMember = apiData.Columns[1].ColumnName;
             }
-
-            lbxApiResult.DataSource = apiData;
-            lbxApiResult.DisplayMember = apiData.Columns[0].ColumnName;
-            lbxApiResult.ValueMember = apiData.Columns[1].ColumnName;
-
+            catch (Exception)
+            {
+                MessageBox.Show("An error occured while trying to parse the API. Please check the API-Source and try again","Parsing Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
