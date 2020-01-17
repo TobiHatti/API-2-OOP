@@ -267,5 +267,11 @@ namespace API2OOP
                 ArrayIndex = pArrayIndex;
             }
         }
+
+        private void btnOpenExample_Click(object sender, EventArgs e)
+        {
+            LanguageExample langExamp = new LanguageExample();
+            langExamp.ShowDialog();
+        }
     }
 }

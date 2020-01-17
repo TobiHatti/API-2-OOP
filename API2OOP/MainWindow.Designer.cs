@@ -50,6 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnOpenExample = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +82,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnOpenExample);
             this.groupBox1.Controls.Add(this.btnCopyResult2Clipboard);
             this.groupBox1.Controls.Add(this.cbxLanguage);
             this.groupBox1.Controls.Add(this.lbxApiResult);
@@ -90,16 +92,16 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(635, 597);
+            this.groupBox1.Size = new System.Drawing.Size(635, 601);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Result View";
             // 
             // btnCopyResult2Clipboard
             // 
-            this.btnCopyResult2Clipboard.Location = new System.Drawing.Point(558, 535);
+            this.btnCopyResult2Clipboard.Location = new System.Drawing.Point(558, 539);
             this.btnCopyResult2Clipboard.Name = "btnCopyResult2Clipboard";
-            this.btnCopyResult2Clipboard.Size = new System.Drawing.Size(69, 25);
+            this.btnCopyResult2Clipboard.Size = new System.Drawing.Size(70, 25);
             this.btnCopyResult2Clipboard.TabIndex = 5;
             this.btnCopyResult2Clipboard.Text = "Copy";
             this.btnCopyResult2Clipboard.UseVisualStyleBackColor = true;
@@ -113,7 +115,7 @@
             "C#, Java, Python, etc.",
             "VBA",
             "PHP"});
-            this.cbxLanguage.Location = new System.Drawing.Point(11, 566);
+            this.cbxLanguage.Location = new System.Drawing.Point(11, 570);
             this.cbxLanguage.Name = "cbxLanguage";
             this.cbxLanguage.Size = new System.Drawing.Size(133, 24);
             this.cbxLanguage.TabIndex = 3;
@@ -140,7 +142,7 @@
             this.txbCSObject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txbCSObject.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCSObject.Location = new System.Drawing.Point(11, 535);
+            this.txbCSObject.Location = new System.Drawing.Point(11, 539);
             this.txbCSObject.Margin = new System.Windows.Forms.Padding(4);
             this.txbCSObject.Name = "txbCSObject";
             this.txbCSObject.ReadOnly = true;
@@ -278,12 +280,23 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "        ";
             // 
+            // btnOpenExample
+            // 
+            this.btnOpenExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenExample.Location = new System.Drawing.Point(452, 570);
+            this.btnOpenExample.Name = "btnOpenExample";
+            this.btnOpenExample.Size = new System.Drawing.Size(175, 24);
+            this.btnOpenExample.TabIndex = 6;
+            this.btnOpenExample.Text = "Language Example";
+            this.btnOpenExample.UseVisualStyleBackColor = true;
+            this.btnOpenExample.Click += new System.EventHandler(this.btnOpenExample_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(661, 711);
+            this.ClientSize = new System.Drawing.Size(661, 715);
             this.Controls.Add(this.txbPost3Value);
             this.Controls.Add(this.txbPost3Key);
             this.Controls.Add(this.txbPost2Value);
@@ -338,6 +351,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbxLanguage;
         private System.Windows.Forms.Button btnCopyResult2Clipboard;
+        private System.Windows.Forms.Button btnOpenExample;
     }
 }
 
