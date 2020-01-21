@@ -28,29 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rtbLanguageExample = new System.Windows.Forms.RichTextBox();
             this.cbxExampleLanguage = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCloseExample = new System.Windows.Forms.Button();
             this.btnCopyExample = new System.Windows.Forms.Button();
+            this.webLanguageExample = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
-            // 
-            // rtbLanguageExample
-            // 
-            this.rtbLanguageExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbLanguageExample.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.rtbLanguageExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbLanguageExample.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbLanguageExample.ForeColor = System.Drawing.Color.White;
-            this.rtbLanguageExample.Location = new System.Drawing.Point(12, 45);
-            this.rtbLanguageExample.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbLanguageExample.Name = "rtbLanguageExample";
-            this.rtbLanguageExample.ReadOnly = true;
-            this.rtbLanguageExample.Size = new System.Drawing.Size(864, 351);
-            this.rtbLanguageExample.TabIndex = 0;
-            this.rtbLanguageExample.Text = "";
             // 
             // cbxExampleLanguage
             // 
@@ -103,16 +86,27 @@
             this.btnCopyExample.UseVisualStyleBackColor = true;
             this.btnCopyExample.Click += new System.EventHandler(this.btnCopyExample_Click);
             // 
+            // webLanguageExample
+            // 
+            this.webLanguageExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webLanguageExample.Location = new System.Drawing.Point(12, 44);
+            this.webLanguageExample.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webLanguageExample.Name = "webLanguageExample";
+            this.webLanguageExample.Size = new System.Drawing.Size(865, 352);
+            this.webLanguageExample.TabIndex = 4;
+            // 
             // LanguageExample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 438);
+            this.Controls.Add(this.webLanguageExample);
             this.Controls.Add(this.btnCopyExample);
             this.Controls.Add(this.btnCloseExample);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxExampleLanguage);
-            this.Controls.Add(this.rtbLanguageExample);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LanguageExample";
@@ -124,11 +118,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox rtbLanguageExample;
         private System.Windows.Forms.ComboBox cbxExampleLanguage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCloseExample;
         private System.Windows.Forms.Button btnCopyExample;
+        private System.Windows.Forms.WebBrowser webLanguageExample;
     }
 }

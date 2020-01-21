@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>7F395B343D05722C3BA9F0FAA4D2115BD8D6264782CA7BB6AC2C37A0AC5D16EF</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>CE946EB2F2C114697E88E429ADDFDF7767ABD418C1577ADCB7C4C4FB69C88BA2</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>8a52285c-43ea-4066-a46d-0dc358b67bb2_1.0.0.0_x64__smgzzkc2t9gr0</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>8a52285c-43ea-4066-a46d-0dc358b67bb2_smgzzkc2t9gr0!App</RegisteredUserModeAppID>
     <RegisteredPackageID>8a52285c-43ea-4066-a46d-0dc358b67bb2</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-01-16T13:45:18.111</Modified>
+      <Modified>2020-01-21T08:15:53.498</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\API2OOP_UWP.exe">
       <PackagePath>entrypoint\API2OOP_UWP.exe</PackagePath>
-      <Modified>2020-01-16T13:45:15.798</Modified>
+      <Modified>2020-01-21T08:15:52.798</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -90,15 +90,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\API2OOP_UWP.xr.xml">
       <PackagePath>API2OOP_UWP.xr.xml</PackagePath>
-      <Modified>2020-01-16T13:45:15.459</Modified>
+      <Modified>2020-01-21T06:57:18.425</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-01-16T13:45:15.521</Modified>
+      <Modified>2020-01-21T08:15:52.469</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-01-16T13:45:15.521</Modified>
+      <Modified>2020-01-21T08:15:52.470</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -106,11 +106,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-01-16T06:56:41.252</Modified>
+      <Modified>2020-01-20T13:22:36.804</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Core\API2OOP_UWP.exe">
       <PackagePath>API2OOP_UWP.exe</PackagePath>
-      <Modified>2020-01-16T13:45:18.079</Modified>
+      <Modified>2020-01-21T08:15:53.479</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

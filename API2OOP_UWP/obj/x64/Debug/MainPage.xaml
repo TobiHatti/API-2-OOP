@@ -25,12 +25,13 @@
         <TextBox x:ConnectionId='10' x:Name="txbPost3Value" HorizontalAlignment="Left" Margin="10,343,0,0" Text="" PlaceholderText="Value" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="125,87,0,0" Text="Result View" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button x:ConnectionId='11' x:Name="btnCopyResult2Clipboard" Content="Copy" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="54" Height="32" HorizontalAlignment="Right"                                      />
-        <TextBox x:ConnectionId='12' x:Name="txbCSObject" Margin="125,0,69,10" Text="" PlaceholderText="No Item Selected / No Output Possible" TextWrapping="Wrap" Height="32" VerticalAlignment="Bottom" IsReadOnly="True"/>
+        <TextBox x:ConnectionId='12' x:Name="txbCSObject" Margin="125,0,128,10" Text="" PlaceholderText="No Item Selected / No Output Possible" TextWrapping="Wrap" Height="32" VerticalAlignment="Bottom"                              />
         <ComboBox x:ConnectionId='13' x:Name="cbxLanguage" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="100"                                                >
             <ComboBoxItem IsSelected="True" Content="C#, Java, Pyhtom, etc."/>
             <ComboBoxItem Content="VB.NET"/>
             <ComboBoxItem Content="PHP"/>
         </ComboBox>
+        <Button x:ConnectionId='14' x:Name="btnFindEntry" Content="Find..." Margin="0,0,69,10" VerticalAlignment="Bottom" HorizontalAlignment="Right"                            Height="32" Width="54"/>
     </Grid>
 </Page>
 

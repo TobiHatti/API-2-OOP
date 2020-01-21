@@ -289,5 +289,28 @@ namespace API2OOP_UWP
             if (ApiResponse != null)
                 FillApiListing();
         }
+
+        private void btnFindEntry_Click(object sender, RoutedEventArgs e)
+        {
+            FindElement();
+        }
+
+        private void txbCSObject_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+                FindElement();
+        }
+
+        private void FindElement()
+        {
+            for (int i = 0; i < ApiData.Count; i++)
+            {
+                if (ApiData[i].SimplifiedLine == txbCSObject.Text)
+                {
+                    lbxApiResult.SelectedIndex = i;
+                    lbxApiResult.ScrollIntoView(lbxApiResult.SelectedItem);
+                }
+            }
+        }
     }
 }

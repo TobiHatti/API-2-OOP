@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Highlight;
+using Highlight.Engines;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +31,7 @@ namespace API2OOP
 
         private void btnCopyExample_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(rtbLanguageExample.Text);
+
         }
 
         private void FillLanguageSelection()
@@ -40,14 +42,7 @@ namespace API2OOP
 
         private void LoadExamples()
         {
-            // Formating-Notes:
-            // Default  White
-            // [I]      Comment
-            // [K]      Keyword
-            // [C]      Class
-            // [M]      Method
-
-            languageExamples.Add("C#",
+            var csharpCode =
 @"// Language: C#
 
 string apiResponse;
@@ -73,10 +68,9 @@ dynamic apiResult = JsonConvert.DeserializeObject(ApiResponse);
 
 // Get line from API
 string username = apiResult.data[0].username;
-"
-                );
+";
 
-            languageExamples.Add("VB .NET",
+            var vbnetCode = 
 @"'' Language: VB .NET
 
 Dim apiResponse As String
@@ -100,15 +94,20 @@ Dim apiResult As dynamic = JsonConvert.DeserializeObject(ApiResponse)
 
 '' Get line from API
 Dim username As String = apiResult.data(0).username
-"
-                );
+";
+
+            Highlighter highlighter = new Highlighter(new HtmlEngine());
+
+            languageExamples.Add("C#", highlighter.Highlight("C#", csharpCode));
+            languageExamples.Add("VB .NET", highlighter.Highlight("VB.NET", vbnetCode));
+
         }
 
         private void cbxExampleLanguage_SelectedValueChanged(object sender, EventArgs e)
         {
             foreach (KeyValuePair<string, string> entry in languageExamples)
                 if (entry.Key == cbxExampleLanguage.SelectedItem.ToString())
-                    rtbLanguageExample.Text = entry.Value;
+                    webLanguageExample.DocumentText = "<pre>" + entry.Value + "</pre>";
         }
     }
 }
