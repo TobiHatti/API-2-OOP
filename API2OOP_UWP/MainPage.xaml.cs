@@ -262,7 +262,10 @@ namespace API2OOP_UWP
         private void lbxApiResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lbxApiResult.SelectedValue != null)
+            {
                 txbCSObject.Text = lbxApiResult.SelectedValue.ToString();
+                txbLineNumber.Text = Convert.ToString(lbxApiResult.SelectedIndex + 1);
+            }
         }
 
         private void cbxLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -320,6 +323,31 @@ namespace API2OOP_UWP
                 MessageDialog dialog = new MessageDialog("The entered item could not be found in the current API-Listing.", "Element not found!");
                 await dialog.ShowAsync();
             }
+        }
+
+        private async void FindLineNumber()
+        {
+            if(Regex.IsMatch(txbLineNumber.Text, "^[0-9]+") && Convert.ToInt32(txbLineNumber.Text) <= lbxApiResult.Items.Count && Convert.ToInt32(txbLineNumber.Text) > 0)
+            {
+                lbxApiResult.SelectedIndex = Convert.ToInt32(txbLineNumber.Text) - 1;
+                lbxApiResult.ScrollIntoView(lbxApiResult.SelectedItem);
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog($"The line-number is either not valid, or out of range. Accepted values range from 0-{lbxApiResult.Items.Count}.", "No such line-number");
+                await dialog.ShowAsync();
+            }
+        }
+
+        private void btnFindLineNo_Click(object sender, RoutedEventArgs e)
+        {
+            FindLineNumber();
+        }
+
+        private void txbLineNumber_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+                FindLineNumber();
         }
     }
 }

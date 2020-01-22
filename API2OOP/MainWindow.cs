@@ -276,7 +276,8 @@ namespace API2OOP
 
         private void txbCSObject_KeyDown(object sender, KeyEventArgs e)
         {
-            FindElement();
+            if(e.KeyData == Keys.Enter)
+                FindElement();
         }
 
         private void btnFindElement_Click(object sender, EventArgs e)
@@ -288,12 +289,12 @@ namespace API2OOP
         {
             bool elementFound = false;
 
-            for (int i = 0; i < ApiData.Count; i++)
+
+            for (int i = 0; i < lbxApiResult.Items.Count; i++)
             {
-                if (ApiData[i].SimplifiedLine == txbCSObject.Text)
+                if ((lbxApiResult.Items[i] as DataRowView).Row[1].ToString() == txbCSObject.Text)
                 {
                     lbxApiResult.SelectedIndex = i;
-                    lbxApiResult.ScrollIntoView(lbxApiResult.SelectedItem);
                     elementFound = true;
                 }
             }
