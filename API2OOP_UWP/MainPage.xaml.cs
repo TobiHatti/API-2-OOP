@@ -51,10 +51,10 @@ namespace API2OOP_UWP
 
         public List<ApiDataV2> ApiData = new List<ApiDataV2>();
 
-        public class ApiDataV2
+        public struct ApiDataV2
         {
-            public string ActualLine { get; set; } = "";
-            public string SimplifiedLine { get; set; } = "";
+            public string ActualLine { get; set; }
+            public string SimplifiedLine { get; set; }
 
             public ApiDataV2(string pActualLine, string pSimplifiedLine)
             {
@@ -301,15 +301,24 @@ namespace API2OOP_UWP
                 FindElement();
         }
 
-        private void FindElement()
+        private async void FindElement()
         {
+            bool elementFound = false;
+
             for (int i = 0; i < ApiData.Count; i++)
             {
                 if (ApiData[i].SimplifiedLine == txbCSObject.Text)
                 {
                     lbxApiResult.SelectedIndex = i;
                     lbxApiResult.ScrollIntoView(lbxApiResult.SelectedItem);
+                    elementFound = true;
                 }
+            }
+
+            if(!elementFound)
+            {
+                MessageDialog dialog = new MessageDialog("The entered item could not be found in the current API-Listing.", "Element not found!");
+                await dialog.ShowAsync();
             }
         }
     }

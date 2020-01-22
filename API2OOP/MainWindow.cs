@@ -273,5 +273,35 @@ namespace API2OOP
             LanguageExample langExamp = new LanguageExample();
             langExamp.ShowDialog();
         }
+
+        private void txbCSObject_KeyDown(object sender, KeyEventArgs e)
+        {
+            FindElement();
+        }
+
+        private void btnFindElement_Click(object sender, EventArgs e)
+        {
+            FindElement();
+        }
+
+        private void FindElement()
+        {
+            bool elementFound = false;
+
+            for (int i = 0; i < ApiData.Count; i++)
+            {
+                if (ApiData[i].SimplifiedLine == txbCSObject.Text)
+                {
+                    lbxApiResult.SelectedIndex = i;
+                    lbxApiResult.ScrollIntoView(lbxApiResult.SelectedItem);
+                    elementFound = true;
+                }
+            }
+
+            if (!elementFound)
+            {
+                MessageBox.Show("The entered item could not be found in the current API-Listing.", "Element not found!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

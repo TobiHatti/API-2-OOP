@@ -31,6 +31,7 @@
             this.txbApiUrl = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnOpenExample = new System.Windows.Forms.Button();
             this.btnCopyResult2Clipboard = new System.Windows.Forms.Button();
             this.cbxLanguage = new System.Windows.Forms.ComboBox();
             this.lbxApiResult = new System.Windows.Forms.ListBox();
@@ -50,7 +51,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnOpenExample = new System.Windows.Forms.Button();
+            this.btnFindElement = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +84,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnOpenExample);
+            this.groupBox1.Controls.Add(this.btnFindElement);
             this.groupBox1.Controls.Add(this.btnCopyResult2Clipboard);
             this.groupBox1.Controls.Add(this.cbxLanguage);
             this.groupBox1.Controls.Add(this.lbxApiResult);
@@ -96,6 +98,17 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Result View";
+            // 
+            // btnOpenExample
+            // 
+            this.btnOpenExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenExample.Location = new System.Drawing.Point(452, 570);
+            this.btnOpenExample.Name = "btnOpenExample";
+            this.btnOpenExample.Size = new System.Drawing.Size(175, 24);
+            this.btnOpenExample.TabIndex = 6;
+            this.btnOpenExample.Text = "Language Example";
+            this.btnOpenExample.UseVisualStyleBackColor = true;
+            this.btnOpenExample.Click += new System.EventHandler(this.btnOpenExample_Click);
             // 
             // btnCopyResult2Clipboard
             // 
@@ -145,9 +158,9 @@
             this.txbCSObject.Location = new System.Drawing.Point(11, 539);
             this.txbCSObject.Margin = new System.Windows.Forms.Padding(4);
             this.txbCSObject.Name = "txbCSObject";
-            this.txbCSObject.ReadOnly = true;
-            this.txbCSObject.Size = new System.Drawing.Size(540, 25);
+            this.txbCSObject.Size = new System.Drawing.Size(464, 25);
             this.txbCSObject.TabIndex = 0;
+            this.txbCSObject.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbCSObject_KeyDown);
             // 
             // btnLoadApi
             // 
@@ -280,16 +293,15 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "        ";
             // 
-            // btnOpenExample
+            // btnFindElement
             // 
-            this.btnOpenExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpenExample.Location = new System.Drawing.Point(452, 570);
-            this.btnOpenExample.Name = "btnOpenExample";
-            this.btnOpenExample.Size = new System.Drawing.Size(175, 24);
-            this.btnOpenExample.TabIndex = 6;
-            this.btnOpenExample.Text = "Language Example";
-            this.btnOpenExample.UseVisualStyleBackColor = true;
-            this.btnOpenExample.Click += new System.EventHandler(this.btnOpenExample_Click);
+            this.btnFindElement.Location = new System.Drawing.Point(482, 539);
+            this.btnFindElement.Name = "btnFindElement";
+            this.btnFindElement.Size = new System.Drawing.Size(70, 25);
+            this.btnFindElement.TabIndex = 5;
+            this.btnFindElement.Text = "Find...";
+            this.btnFindElement.UseVisualStyleBackColor = true;
+            this.btnFindElement.Click += new System.EventHandler(this.btnFindElement_Click);
             // 
             // MainWindow
             // 
@@ -352,6 +364,7 @@
         private System.Windows.Forms.ComboBox cbxLanguage;
         private System.Windows.Forms.Button btnCopyResult2Clipboard;
         private System.Windows.Forms.Button btnOpenExample;
+        private System.Windows.Forms.Button btnFindElement;
     }
 }
 
