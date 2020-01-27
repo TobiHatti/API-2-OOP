@@ -34,7 +34,7 @@ namespace API2OOP_UWP
         private string ApiResponse = null;
         private dynamic ApiResult = null;
 
-        private string regexMatchGroupElement = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?)(""[A-Za-z0-9ÄäÖöÜüß!§$%&/()=?`°^´+*#'~_.:,;_<>|@€µ\{\}\[\]\\\s\-]+""|[0-9.]+|[A-Za-z.]+)(,| ?)";
+        private string regexMatchGroupElement = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?)(""[A-Za-z0-9ÄäÖöÜüß!§$%&/()=?`°^´+*#'~_.:,;_<>|@€µ\{\}\[\]\\\s\-]*""|[0-9.]*|[A-Za-z.]*)(,| ?)";
         private string regexMatchGroupStart = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?){";
         private string regexMatchArrayStart = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?)\[";
         private string regexArrayGroupStart = @"(\s+| ?){";
@@ -109,7 +109,7 @@ namespace API2OOP_UWP
                     }
 
                     ApiResult = JsonConvert.DeserializeObject(ApiResponse);
-
+                    
                     FillApiListing();
                 }
                 else

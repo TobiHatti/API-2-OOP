@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-01-22T12:21:12.506</Modified>
+      <Modified>2020-01-23T09:47:17.592</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\API2OOP_UWP.exe">
       <PackagePath>entrypoint\API2OOP_UWP.exe</PackagePath>
-      <Modified>2020-01-22T12:21:11.885</Modified>
+      <Modified>2020-01-23T09:47:15.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -94,11 +94,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-01-22T12:21:11.688</Modified>
+      <Modified>2020-01-23T07:37:03.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-01-22T12:21:11.689</Modified>
+      <Modified>2020-01-23T07:37:03.704</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -110,7 +110,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\zivi\Desktop\Projects %28GIT%29\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Core\API2OOP_UWP.exe">
       <PackagePath>API2OOP_UWP.exe</PackagePath>
-      <Modified>2020-01-22T12:21:12.492</Modified>
+      <Modified>2020-01-23T09:47:17.569</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
