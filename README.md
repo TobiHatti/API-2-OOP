@@ -22,26 +22,25 @@ Available as Winforms-Program as well as UWP-App (Windows-App)
 	{
 		"id":"2",
 		"employee_name":"Garrett Winters",
-		...
 ```
 
 A single line from the API-Example above, when selected, gets converted into the following:
 
 ```csharp
 // C#
-apiResult.data[0].employee_name
+string name = apiResult.data[0].employee_name;
 ```
 You can pick from several common languages. The output adapts to whichever language is selected:
 
 ```vbnet
-'' VB .NET
-apiResult.data(0).employee_name
+' VB .NET
+Dim name As String = apiResult.data(0).employee_name
 ```
 ```php
 // PHP
-apiResult->data[0]->employee_name
+$name = apiResult->data[0]->employee_name;
 ```
 ```python
 # Python
-apiResult.data[0].employee_name
+name = apiResult.data[0].employee_name
 ```
