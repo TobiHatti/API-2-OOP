@@ -40,7 +40,7 @@ namespace API2OOP
 
         private void btnCopyExample_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(webLanguageExample.Document.Body.InnerText.ToString());
+            if(webLanguageExample.Document != null) Clipboard.SetText(webLanguageExample.Document.Body.InnerText);
         }
 
         private void FillLanguageSelection()

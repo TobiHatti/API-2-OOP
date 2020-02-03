@@ -91,7 +91,7 @@ namespace API2OOP
 
         private void btnCopyResult2Clipboard_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txbCSObject.Text);
+            if(!string.IsNullOrEmpty(txbCSObject.Text)) Clipboard.SetText(txbCSObject.Text);
         }
 
 
