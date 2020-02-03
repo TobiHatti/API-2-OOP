@@ -40,13 +40,7 @@
             this.cbxExampleLanguage.FormattingEnabled = true;
             this.cbxExampleLanguage.Items.AddRange(new object[] {
             "C#",
-            "C++",
-            "C",
-            "VB .NET",
-            "Java",
-            "JavaScript",
-            "PHP",
-            "Python"});
+            "VB .NET"});
             this.cbxExampleLanguage.Location = new System.Drawing.Point(96, 13);
             this.cbxExampleLanguage.Margin = new System.Windows.Forms.Padding(4);
             this.cbxExampleLanguage.Name = "cbxExampleLanguage";
@@ -111,7 +105,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LanguageExample";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "LanguageExample";
+            this.Text = "Language Examples";
             this.ResumeLayout(false);
             this.PerformLayout();
 

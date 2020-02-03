@@ -21,6 +21,15 @@ namespace API2OOP
             InitializeComponent();
             LoadExamples();
             FillLanguageSelection();
+
+            /*
+                C++
+                C
+                Java
+                JavaScript
+                PHP
+                Python
+             */
         }
 
         private void btnCloseExample_Click(object sender, EventArgs e)
@@ -31,7 +40,7 @@ namespace API2OOP
 
         private void btnCopyExample_Click(object sender, EventArgs e)
         {
-
+            Clipboard.SetText(webLanguageExample.Document.Body.InnerText.ToString());
         }
 
         private void FillLanguageSelection()
