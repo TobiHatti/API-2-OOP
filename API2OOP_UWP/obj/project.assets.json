@@ -8261,9 +8261,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zivi\\Desktop\\Projects (GIT)\\API-2-OOP\\API2OOP_UWP\\API2OOP_UWP.csproj",
-      "projectName": "API2OOP_UWP",
-      "projectPath": "C:\\Users\\zivi\\Desktop\\Projects (GIT)\\API-2-OOP\\API2OOP_UWP\\API2OOP_UWP.csproj",
+      "projectUniqueName": "C:\\Users\\zivi\\Desktop\\Projects (GIT)\\API-2-OOP\\API2OOP_UWP\\API-2-OOP Parser.csproj",
+      "projectName": "API-2-OOP Parser",
+      "projectPath": "C:\\Users\\zivi\\Desktop\\Projects (GIT)\\API-2-OOP\\API2OOP_UWP\\API-2-OOP Parser.csproj",
       "packagesPath": "C:\\Users\\zivi\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\zivi\\Desktop\\Projects (GIT)\\API-2-OOP\\API2OOP_UWP\\obj\\",
       "projectStyle": "PackageReference",

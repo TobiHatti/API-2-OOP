@@ -24,7 +24,7 @@ using Windows.UI.Xaml.Navigation;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
-namespace API2OOP_UWP
+namespace API2OOP
 {
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
@@ -67,8 +67,8 @@ namespace API2OOP_UWP
         {
             this.InitializeComponent();
 
-            ApplicationView appView = ApplicationView.GetForCurrentView();
-            appView.Title = "API-2-OOP Parser";
+            //ApplicationView appView = ApplicationView.GetForCurrentView();
+            //appView.Title = "API-2-OOP Parser";
         }
 
         private void btnLoadApi_Click(object sender, RoutedEventArgs e)
@@ -327,10 +327,10 @@ namespace API2OOP_UWP
 
         private async void FindLineNumber()
         {
-            if(Regex.IsMatch(txbLineNumber.Text, "^[0-9]+") && Convert.ToInt32(txbLineNumber.Text) <= lbxApiResult.Items.Count && Convert.ToInt32(txbLineNumber.Text) > 0)
+            if(Regex.IsMatch(txbLineNumber.Text, "^[0-9]*") && Convert.ToInt32(txbLineNumber.Text) <= lbxApiResult.Items.Count && Convert.ToInt32(txbLineNumber.Text) > 0)
             {
                 lbxApiResult.SelectedIndex = Convert.ToInt32(txbLineNumber.Text) - 1;
-                lbxApiResult.ScrollIntoView(lbxApiResult.SelectedItem);
+                lbxApiResult.ScrollIntoView(lbxApiResult.SelectedIndex);
             }
             else
             {

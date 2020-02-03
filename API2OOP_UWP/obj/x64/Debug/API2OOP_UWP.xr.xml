@@ -58,6 +58,6 @@
       <RootProperty Name="IsSelected" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="API2OOP_UWP.MainPage" />
+    <RootType FullName="API_2_OOP.MainPage" />
   </Roots.RootTypes>
 </Roots>

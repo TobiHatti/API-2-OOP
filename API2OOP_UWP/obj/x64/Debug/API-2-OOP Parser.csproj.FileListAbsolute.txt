@@ -1,0 +1,47 @@
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\App.xbf
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\MainPage.xbf
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\resources.pri
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\AppxManifest.xml
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Core\API2OOP_UWP.exe
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Core\API2OOP_UWP_.exe
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Core\AppxManifest.xml
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\API-2-OOP Parser.build.appxrecipe
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\System.Runtime.dll
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Microsoft.UI.Xaml.Markup.winmd
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\App.g.i.cs
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\App.g.cs
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\MainPage.g.i.cs
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\MainPage.g.cs
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\XamlTypeInfo.g.cs
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\App.xaml
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\MainPage.xaml
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\App.xbf
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\MainPage.xbf
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\XamlSaveStateFile.xml
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\API-2-OOP Parser.csproj.CopyComplete
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\ResourceHandlingTask.state
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\priconfig.xml
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\priconfig.xml.intermediate
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\unfiltered.layout.resfiles
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\filtered.layout.resfiles
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\filtered.layout.resfiles.intermediate
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\excluded.layout.resfiles
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\excluded.layout.resfiles.intermediate
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\resources.resfiles
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\resources.resfiles.intermediate
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\pri.resfiles
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\pri.resfiles.intermediate
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\qualifiers.txt
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\qualifiers.txt.intermediate
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\ProjectArchitectures.txt
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885238160000000.json
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\API2OOP.xr.xml
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\API2OOP.exe
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\API2OOP.pdb
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\bin\x64\Debug\Core\API2OOP.exe
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\API2OOP.exe
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\API2OOP.pdb
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP_UWP\obj\x64\Debug\API-2-OOP Parser.csprojAssemblyReference.cache

@@ -8,22 +8,22 @@
 //------------------------------------------------------------------------------
 
 
-namespace API2OOP_UWP
+namespace API2OOP
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.18362.1")]
-        private global::API2OOP_UWP.API2OOP_UWP_XamlTypeInfo.XamlMetaDataProvider __appProvider;
+        private global::API2OOP_UWP.API_2_OOP_Parser_XamlTypeInfo.XamlMetaDataProvider __appProvider;
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.18362.1")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private global::API2OOP_UWP.API2OOP_UWP_XamlTypeInfo.XamlMetaDataProvider _AppProvider
+        private global::API2OOP_UWP.API_2_OOP_Parser_XamlTypeInfo.XamlMetaDataProvider _AppProvider
         {
             get
             {
                 if (__appProvider == null)
                 {
-                    __appProvider = new global::API2OOP_UWP.API2OOP_UWP_XamlTypeInfo.XamlMetaDataProvider();
+                    __appProvider = new global::API2OOP_UWP.API_2_OOP_Parser_XamlTypeInfo.XamlMetaDataProvider();
                 }
                 return __appProvider;
             }
@@ -61,7 +61,7 @@ namespace API2OOP_UWP
     }
 }
 
-namespace API2OOP_UWP.API2OOP_UWP_XamlTypeInfo
+namespace API2OOP_UWP.API_2_OOP_Parser_XamlTypeInfo
 {
     /// <summary>
     /// Main class for providing metadata for the app or library
@@ -70,15 +70,15 @@ namespace API2OOP_UWP.API2OOP_UWP_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed class XamlMetaDataProvider : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        private global::API2OOP_UWP.API2OOP_UWP_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
+        private global::API2OOP_UWP.API_2_OOP_Parser_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
 
-        private global::API2OOP_UWP.API2OOP_UWP_XamlTypeInfo.XamlTypeInfoProvider Provider
+        private global::API2OOP_UWP.API_2_OOP_Parser_XamlTypeInfo.XamlTypeInfoProvider Provider
         {
             get
             {
                 if (_provider == null)
                 {
-                    _provider = new global::API2OOP_UWP.API2OOP_UWP_XamlTypeInfo.XamlTypeInfoProvider();
+                    _provider = new global::API2OOP_UWP.API_2_OOP_Parser_XamlTypeInfo.XamlTypeInfoProvider();
                 }
                 return _provider;
             }

@@ -21,13 +21,23 @@
     <PackageDependency Name="Microsoft.NET.CoreFramework.Debug.2.2" MinVersion="2.2.27909.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
   </Dependencies>
   <Resources>
-    <Resource Language="DE-DE" />
+    <Resource Language="EN" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="API2OOP_UWP.exe" EntryPoint="API2OOP_UWP.App">
-      <uap:VisualElements DisplayName="API2OOP_UWP" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="API2OOP_UWP" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
+    <Application Id="App" Executable="API2OOP.exe" EntryPoint="API2OOP_UWP.App">
+      <uap:VisualElements DisplayName="API-2-OOP Parser" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="The API-2-OOP-Tool provides a simple way to convert lines from an API to programing-friendly-formated statements to speed up development of API-based programs." BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscapeFlipped" />
+          <uap:Rotation Preference="portraitFlipped" />
+        </uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>
@@ -37,7 +47,7 @@
   <Extensions>
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
-        <Path>API2OOP_UWP.exe</Path>
+        <Path>API2OOP.exe</Path>
         <ActivatableClass ActivatableClassId="Microsoft.UI.Xaml.Markup.ReflectionXamlMetadataProvider" ThreadingModel="both" />
       </InProcessServer>
     </Extension>

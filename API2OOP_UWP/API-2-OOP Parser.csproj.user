@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>C:\Users\zivi\Desktop\API2OOP_Dev.png</Source>
+    <SmallTileSource>C:\Users\zivi\Desktop\API2OOP_Dev.png</SmallTileSource>
+    <MediumTileSource>C:\Users\zivi\Desktop\API2OOP_Dev.png</MediumTileSource>
+    <WideTileSource>C:\Users\zivi\Desktop\API2OOP_Dev.png</WideTileSource>
+    <LargeTileSource>C:\Users\zivi\Desktop\API2OOP_Dev.png</LargeTileSource>
+    <AppIconSource>C:\Users\zivi\Desktop\API2OOP_Dev.png</AppIconSource>
+    <SplashScreenSource>C:\Users\zivi\Desktop\API2OOP_Dev.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\zivi\Desktop\API2OOP_Dev.png</PackageLogoSource>
+  </PropertyGroup>
+</Project>
