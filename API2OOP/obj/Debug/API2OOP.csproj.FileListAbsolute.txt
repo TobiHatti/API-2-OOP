@@ -1,14 +1,14 @@
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\bin\Debug\API2OOP.exe.config
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\bin\Debug\API2OOP.exe
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\bin\Debug\API2OOP.pdb
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\bin\Debug\Highlight.dll
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\bin\Debug\Newtonsoft.Json.xml
-C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.csprojAssemblyReference.cache
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.LanguageExample.resources
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.MainWindow.resources
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.Properties.Resources.resources
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.csproj.GenerateResource.cache
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.csproj.CopyComplete
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.exe
 C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.pdb
-C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.LanguageExample.resources
-C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\bin\Debug\Highlight.dll
+C:\Users\zivi\Desktop\Projects (GIT)\API-2-OOP\API2OOP\obj\Debug\API2OOP.csprojAssemblyReference.cache

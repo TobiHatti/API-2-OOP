@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.txbApiUrl = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnOpenExample = new System.Windows.Forms.Button();
+            this.btnFindElement = new System.Windows.Forms.Button();
             this.btnCopyResult2Clipboard = new System.Windows.Forms.Button();
             this.cbxLanguage = new System.Windows.Forms.ComboBox();
             this.lbxApiResult = new System.Windows.Forms.ListBox();
@@ -51,7 +53,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnFindElement = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +111,16 @@
             this.btnOpenExample.UseVisualStyleBackColor = true;
             this.btnOpenExample.Click += new System.EventHandler(this.btnOpenExample_Click);
             // 
+            // btnFindElement
+            // 
+            this.btnFindElement.Location = new System.Drawing.Point(482, 539);
+            this.btnFindElement.Name = "btnFindElement";
+            this.btnFindElement.Size = new System.Drawing.Size(70, 25);
+            this.btnFindElement.TabIndex = 5;
+            this.btnFindElement.Text = "Find...";
+            this.btnFindElement.UseVisualStyleBackColor = true;
+            this.btnFindElement.Click += new System.EventHandler(this.btnFindElement_Click);
+            // 
             // btnCopyResult2Clipboard
             // 
             this.btnCopyResult2Clipboard.Location = new System.Drawing.Point(558, 539);
@@ -126,7 +137,7 @@
             this.cbxLanguage.FormattingEnabled = true;
             this.cbxLanguage.Items.AddRange(new object[] {
             "C#, Java, Python, etc.",
-            "VBA",
+            "VB .Net",
             "PHP"});
             this.cbxLanguage.Location = new System.Drawing.Point(11, 570);
             this.cbxLanguage.Name = "cbxLanguage";
@@ -293,16 +304,6 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "        ";
             // 
-            // btnFindElement
-            // 
-            this.btnFindElement.Location = new System.Drawing.Point(482, 539);
-            this.btnFindElement.Name = "btnFindElement";
-            this.btnFindElement.Size = new System.Drawing.Size(70, 25);
-            this.btnFindElement.TabIndex = 5;
-            this.btnFindElement.Text = "Find...";
-            this.btnFindElement.UseVisualStyleBackColor = true;
-            this.btnFindElement.Click += new System.EventHandler(this.btnFindElement_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -329,6 +330,7 @@
             this.Controls.Add(this.txbApiUrl);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
             this.Text = "API-2-OOP Parser";

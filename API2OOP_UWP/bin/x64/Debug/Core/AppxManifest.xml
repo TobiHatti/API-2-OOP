@@ -10,8 +10,8 @@
   <Identity Name="8a52285c-43ea-4066-a46d-0dc358b67bb2" Publisher="CN=zivi" Version="1.0.0.0" ProcessorArchitecture="x64" />
   <mp:PhoneIdentity PhoneProductId="8a52285c-43ea-4066-a46d-0dc358b67bb2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>API2OOP_UWP</DisplayName>
-    <PublisherDisplayName>zivi</PublisherDisplayName>
+    <DisplayName>API-2-OOP Parser</DisplayName>
+    <PublisherDisplayName>Endix Development</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
