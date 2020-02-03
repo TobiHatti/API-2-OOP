@@ -1,6 +1,11 @@
 # API-2-OOP
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![GitHub](https://img.shields.io/github/license/TobiHatti/API-2-OOP)](https://opensource.org/licenses/MIT)
+[![GitHub Release Date](https://img.shields.io/github/release-date/TobiHatti/API-2-OOP)](https://github.com/TobiHatti/API-2-OOP/releases)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/TobiHatti/API-2-OOP?include_prereleases)](https://github.com/TobiHatti/API-2-OOP/releases)
+[![GitHub last commit](https://img.shields.io/github/last-commit/TobiHatti/API-2-OOP)](https://github.com/TobiHatti/API-2-OOP/commits/master)
+[![GitHub issues](https://img.shields.io/github/issues-raw/TobiHatti/API-2-OOP)](https://github.com/TobiHatti/API-2-OOP/issues)
+[![GitHub language count](https://img.shields.io/github/languages/count/TobiHatti/API-2-OOP)](https://github.com/TobiHatti/API-2-OOP)
 
 
 ![image](https://github.com/TobiHatti/API-2-OOP/blob/master/API2OOP_Sample.PNG)
@@ -22,26 +27,25 @@ Available as Winforms-Program as well as UWP-App (Windows-App)
 	{
 		"id":"2",
 		"employee_name":"Garrett Winters",
-		...
 ```
 
 A single line from the API-Example above, when selected, gets converted into the following:
 
 ```csharp
 // C#
-apiResult.data[0].employee_name
+string name = apiResult.data[0].employee_name;
 ```
 You can pick from several common languages. The output adapts to whichever language is selected:
 
 ```vbnet
-'' VB .NET
-apiResult.data(0).employee_name
+' VB .NET
+Dim name As String = apiResult.data(0).employee_name
 ```
 ```php
 // PHP
-apiResult->data[0]->employee_name
+$name = apiResult->data[0]->employee_name;
 ```
 ```python
 # Python
-apiResult.data[0].employee_name
+name = apiResult.data[0].employee_name
 ```
