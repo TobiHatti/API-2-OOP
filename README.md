@@ -49,3 +49,9 @@ $name = apiResult->data[0]->employee_name;
 # Python
 name = apiResult.data[0].employee_name
 ```
+
+## Downloads: 
+
+WinForms-Edition: [see releases](https://github.com/TobiHatti/API-2-OOP/releases)
+
+UWP-Versions / Windows App: Download from Microsoft-Store (Pending...)
