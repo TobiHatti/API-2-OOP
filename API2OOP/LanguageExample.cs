@@ -14,7 +14,7 @@ namespace API2OOP
 {
     public partial class LanguageExample : Form
     {
-        private Dictionary<string, string> languageExamples = new Dictionary<string, string>();
+        private readonly Dictionary<string, string> languageExamples = new Dictionary<string, string>();
         
         public LanguageExample()
         {
