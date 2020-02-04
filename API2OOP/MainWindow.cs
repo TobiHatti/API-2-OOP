@@ -19,17 +19,16 @@ namespace API2OOP
         private string ApiResponse = null;
         private dynamic ApiResult = null;
 
-        private string regexMatchGroupElement = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?)(""[A-Za-z0-9ÄäÖöÜüß!§$%&/()=?`°^´+*#'~_.:,;_<>|@€µ\{\}\[\]\\\s\-]*""|[0-9.]*|[A-Za-z.]*)(,| ?)";
-        private string regexMatchGroupStart = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?){";
-        private string regexMatchArrayStart = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?)\[";
-        private string regexArrayGroupStart = @"(\s+| ?){";
-        private string regexMatchGroupEnd   = @"(\s+| ?)}(,| ?)";
-        private string regexMatchArrayEnd   = @"(\s+| ?)\](,| ?)";
+        private const string regexMatchGroupElement = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?)(""[A-Za-z0-9ÄäÖöÜüß!§$%&/()=?`°^´+*#'~_.:,;_<>|@€µ\{\}\[\]\\\s\-]*""|[0-9.]*|[A-Za-z.]*)(,| ?)";
+        private const string regexMatchGroupStart = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?){";
+        private const string regexMatchArrayStart = @"(\s+| ?)""[A-Za-z0-9:/._-]+""(\s+| ?):(\s+| ?)\[";
+        private const string regexArrayGroupStart = @"(\s+| ?){";
+        private const string regexMatchGroupEnd   = @"(\s+| ?)}(,| ?)";
+        private const string regexMatchArrayEnd   = @"(\s+| ?)\](,| ?)";
 
-        private string regexFindGroupName = @"""[A-Za-z0-9:/._-]+""";
-        private string regexFindElementName = @"""[A-Za-z0-9:/._-]+"":";
+        private const string regexFindGroupName = @"""[A-Za-z0-9:/._-]+""";
+        private const string regexFindElementName = @"""[A-Za-z0-9:/._-]+"":";
 
-        private string languageDynamicType = "dynamic";
         private string classDelimiter = ".";
         private char arrayOpenBracket = '[';
         private char arrayCloseBracket = ']';
@@ -98,9 +97,8 @@ namespace API2OOP
         private void LoadApi()
         {
             try
-            { 
-                Uri uriResult;
-                bool isValidUrl = Uri.TryCreate(txbApiUrl.Text, UriKind.Absolute, out uriResult)
+            {
+                bool isValidUrl = Uri.TryCreate(txbApiUrl.Text, UriKind.Absolute, out Uri uriResult)
                     && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 
                 if (isValidUrl)
@@ -135,7 +133,7 @@ namespace API2OOP
                     MessageBox.Show("Please enter a valid URL", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("The API could not be loaded or failed to parse.Please verify that the APIs URL is valid and the output is in a standard JSON format.", "Could not load API", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

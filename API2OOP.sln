@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API2OOP", "API2OOP\API2OOP.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API-2-OOP Parser", "API2OOP_UWP\API-2-OOP Parser.csproj", "{05069369-BEF8-4CD7-A662-1B084ECA4811}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "API2OOP_Setup", "API2OOP_Setup\API2OOP_Setup.vdproj", "{D997297A-2104-4CED-B227-6B0E495DEB73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,16 @@ Global
 		{05069369-BEF8-4CD7-A662-1B084ECA4811}.Release|x86.ActiveCfg = Release|x86
 		{05069369-BEF8-4CD7-A662-1B084ECA4811}.Release|x86.Build.0 = Release|x86
 		{05069369-BEF8-4CD7-A662-1B084ECA4811}.Release|x86.Deploy.0 = Release|x86
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Debug|Any CPU.ActiveCfg = Debug
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Debug|ARM.ActiveCfg = Debug
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Debug|ARM64.ActiveCfg = Debug
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Debug|x64.ActiveCfg = Debug
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Debug|x86.ActiveCfg = Debug
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Release|Any CPU.ActiveCfg = Release
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Release|ARM.ActiveCfg = Release
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Release|ARM64.ActiveCfg = Release
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Release|x64.ActiveCfg = Release
+		{D997297A-2104-4CED-B227-6B0E495DEB73}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
