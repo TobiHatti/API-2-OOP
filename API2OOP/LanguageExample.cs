@@ -80,16 +80,16 @@ string username = apiResult.data[0].username;
 ";
 
             var vbnetCode = 
-@"'' Language: VB .NET
+@"' Language: VB .NET
 
 Dim apiResponse As String
 
-'' Get API-Response by GET
+' Get API-Response by GET
 Using webClient As WebClient = New WebClient()
     apiResponse = webClient.DownloadString(""http://..."")
 End Using
 
-'' Get API-Response by POST
+' Get API-Response by POST
 Using webClient As WebClient = New WebClient()
     Dim postAttributes As NameValueCollection = New NameValueCollection()
     postAttributes.Add(""username"", ""TomJohn322"")
@@ -97,18 +97,18 @@ Using webClient As WebClient = New WebClient()
     apiResponse = Encoding.UTF8.GetString(webClient.UploadValues(""http://...""))
 End Using
 
-'' Convert API-Response
-'' Recommended: Install the Newtonsoft.Json NuGet Package
+' Convert API-Response
+' Recommended: Install the Newtonsoft.Json NuGet Package
 Dim apiResult As dynamic = JsonConvert.DeserializeObject(ApiResponse)
 
-'' Get line from API
+' Get line from API
 Dim username As String = apiResult.data(0).username
 ";
 
             Highlighter highlighter = new Highlighter(new HtmlEngine());
 
             languageExamples.Add("C#", highlighter.Highlight("C#", csharpCode));
-            languageExamples.Add("VB .NET", highlighter.Highlight("VB.NET", vbnetCode));
+            languageExamples.Add("VB.NET", highlighter.Highlight("VB.NET", vbnetCode));
 
         }
 

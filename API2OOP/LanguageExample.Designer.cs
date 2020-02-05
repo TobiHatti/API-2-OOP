@@ -39,9 +39,6 @@
             // cbxExampleLanguage
             // 
             this.cbxExampleLanguage.FormattingEnabled = true;
-            this.cbxExampleLanguage.Items.AddRange(new object[] {
-            "C#",
-            "VB .NET"});
             this.cbxExampleLanguage.Location = new System.Drawing.Point(96, 13);
             this.cbxExampleLanguage.Margin = new System.Windows.Forms.Padding(4);
             this.cbxExampleLanguage.Name = "cbxExampleLanguage";
