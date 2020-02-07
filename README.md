@@ -1,6 +1,6 @@
 # API-2-OOP
 
-[![GitHub](https://img.shields.io/github/license/TobiHatti/API-2-OOP)](https://opensource.org/licenses/MIT)
+[![GitHub](https://img.shields.io/github/license/TobiHatti/API-2-OOP)](https://opensource.org/licenses/GPL-3.0)
 [![GitHub Release Date](https://img.shields.io/github/release-date/TobiHatti/API-2-OOP)](https://github.com/TobiHatti/API-2-OOP/releases)
 [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/TobiHatti/API-2-OOP?include_prereleases)](https://github.com/TobiHatti/API-2-OOP/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/TobiHatti/API-2-OOP)](https://github.com/TobiHatti/API-2-OOP/commits/master)
