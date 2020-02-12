@@ -1,3 +1,5 @@
+<img align="right" width="80" height="80" src="https://github.com/TobiHatti/API-2-OOP/blob/master/API2OOP_UWP/Assets/StoreLogo.scale-400.png">
+
 # API-2-OOP
 
 [![GitHub](https://img.shields.io/github/license/TobiHatti/API-2-OOP)](https://opensource.org/licenses/GPL-3.0)
