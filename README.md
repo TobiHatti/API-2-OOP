@@ -9,7 +9,7 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/TobiHatti/API-2-OOP)](https://github.com/TobiHatti/API-2-OOP/issues)
 [![GitHub language count](https://img.shields.io/github/languages/count/TobiHatti/API-2-OOP)](https://github.com/TobiHatti/API-2-OOP)
 
-![image](https://endev.at/content/projects/API-2-OOP/API2OOP_Banner_1080.png)
+![image](https://endev.at/content/projects/API-2-OOP/API2OOP_Banner_300.png)
 
 The API-2-OOP-Tool provides a simple way to convert lines from an API to programing-friendly-formated statements to speed up development of API-based programs.
 Available as Winforms-Program as well as UWP-App (Windows-App)
